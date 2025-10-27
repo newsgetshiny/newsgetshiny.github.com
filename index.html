@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PulsePress — Modern News Blog</title>
+  <meta name="description" content="A modern, responsive Bootstrap news blog template with five attractive sections.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root{
+      --pp-primary:#0d6efd;
+      --pp-dark:#0b1220;
+      --pp-muted:#6c757d;
+      --pp-accent:#20c997;
+    }
+    html { scroll-behavior: smooth; }
+    body{background:#0a0f18;color:#e9ecef; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;}
+    .navbar{backdrop-filter: blur(6px);}
+    .navbar-brand{font-weight:800; letter-spacing:.5px}
+    .nav-link{color:#cfd3d8 !important}
+    .nav-link:hover{color:#fff !important}
+    .btn-gradient{
+      border:0;
+      background:linear-gradient(135deg,var(--pp-primary),#6f42c1);
+      color:#fff;
+      box-shadow: 0 0 0 / 0;
+      transition: transform .15s ease, box-shadow .2s ease;
+    }
+    .btn-gradient:hover{transform: translateY(-1px); box-shadow: 0 10px 25px rgba(13,110,253,.35)}
+    .hero{
+      background:
+        radial-gradient(1200px 600px at 80% -10%, rgba(13,110,253,.25), transparent 60%),
+        radial-gradient(1000px 500px at 20% -20%, rgba(32,201,151,.18), transparent 60%),
+        linear-gradient(180deg,#0a0f18,#0b1220 30%,#0a0f18 100%);
+      position: relative;
+      overflow:hidden;
+    }
+    .badge-soft{background:rgba(32,201,151,.15); color:#8cf1d6; border:1px solid rgba(32,201,151,.25)}
+    .headline{font-weight:800; line-height:1.1}
+    .eyebrow{letter-spacing:.18em; text-transform:uppercase; color:#8aa0b5}
+    .card{
+      background:#0f1726; border-color:#1d2639;
+      transition: transform .15s ease, box-shadow .2s;
+    }
+    .card:hover{transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,.35)}
+    .card .category{font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; color:#9fb2c9}
+    .shadow-soft{box-shadow: 0 15px 60px rgba(13,110,253,.15)}
+    .section-title{font-weight:800}
+    .section-sub{color:#aab6c5}
+    .category-chip{border:1px solid #25314a; color:#bcd0e3}
+    .category-chip:hover{background:#162036; color:#fff}
+    .featured{
+      background: radial-gradient(600px 300px at 10% 10%, rgba(111,66,193,.18), transparent 60%),
+                  radial-gradient(600px 320px at 100% 0%, rgba(13,110,253,.18), transparent 60%),
+                  #0b1220;
+      border:1px solid #1c2540;
+    }
+    .newsletter{background: linear-gradient(135deg, rgba(13,110,253,.12), rgba(32,201,151,.12)); border:1px solid #1a2440}
+    .footer a{color:#cbd5e1}
+    .footer a:hover{color:#fff}
+    .avatar{width:36px;height:36px;border-radius:50%;object-fit:cover}
+    .byline{color:#94a3b8;font-size:.9rem}
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top border-bottom border-primary-subtle" style="background:rgba(10,15,24,.6)">
+    <div class="container">
+      <a class="navbar-brand" href="#home"><i class="bi bi-lightning-charge-fill text-warning me-1"></i>PulsePress</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#latest">Latest</a></li>
+          <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#featured">Featured</a></li>
+          <li class="nav-item"><a class="nav-link" href="#newsletter">Newsletter</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        </ul>
+        <a href="#newsletter" class="btn btn-sm btn-gradient ms-lg-3">Subscribe</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO (Section 1) -->
+  <header id="home" class="hero pt-6" style="padding-top: 7rem;">
+    <div class="container py-5">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-7">
+          <span class="eyebrow">Breaking Today</span>
+          <h1 class="display-5 headline mt-2">Your Daily Pulse of Tech, Business & Culture</h1>
+          <p class="lead mt-3 text-secondary">Actionable headlines, deep dives, and no fluff. Curated by editors, powered by modern tools.</p>
+          <div class="d-flex gap-2 mt-3">
+            <a class="btn btn-gradient btn-lg" href="#latest"><i class="bi bi-newspaper me-2"></i>Read Latest</a>
+            <a class="btn btn-outline-light btn-lg" href="#featured"><i class="bi bi-bookmark-star me-2"></i>Top Story</a>
+          </div>
+          <div class="d-flex align-items-center gap-2 mt-4 byline">
+            <img class="avatar" src="https://picsum.photos/seed/editor/200/200" alt="Editor">
+            <span>Edited by <strong>Alex Morgan</strong> · Updated <time>Today</time></span>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="card shadow-soft">
+            <img class="card-img-top" src="https://picsum.photos/seed/lead/1280/720" alt="Lead image">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <span class="category">Tech</span>
+                <span class="badge badge-soft">Exclusive</span>
+              </div>
+              <h5 class="card-title mt-2">AI Chips Push Edge Devices Into a New Era</h5>
+              <p class="card-text text-secondary">From wearables to cars, the next wave of processors is designed for on-device intelligence—faster, private, and greener.</p>
+              <a href="#" class="stretched-link">Continue reading <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- LATEST (Section 2) -->
+  <section id="latest" class="py-5">
+    <div class="container">
+      <div class="d-flex align-items-end justify-content-between mb-3">
+        <div>
+          <h2 class="section-title mb-1">Latest Headlines</h2>
+          <p class="section-sub">Fresh stories across tech, markets, and culture.</p>
+        </div>
+        <a href="#" class="btn btn-outline-light btn-sm">See All</a>
+      </div>
+
+      <div class="row g-4">
+        <!-- 6 cards -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <img src="https://picsum.photos/seed/seed1/800/500" class="card-img-top" alt="Startups bet on tiny LLMs for on-device search">
+            <div class="card-body d-flex flex-column">
+              <span class="category">Tech</span>
+              <h5 class="card-title mt-2">Startups bet on tiny LLMs for on-device search</h5>
+              <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere.</p>
+              <div class="mt-auto d-flex align-items-center justify-content-between">
+                <div class="byline"><i class="bi bi-clock me-1"></i> 4 min read</div>
+                <a href="#" class="btn btn-sm btn-outline-light">Read</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <img src="https://picsum.photos/seed/seed2/800/500" class="card-img-top" alt="Bond rally cools as inflation data surprises">
+            <div class="card-body d-flex flex-column">
+              <span class="category">Markets</span>
+              <h5 class="card-title mt-2">Bond rally cools as inflation data surprises</h5>
+              <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere.</p>
+              <div class="mt-auto d-flex align-items-center justify-content-between">
+                <div class="byline"><i class="bi bi-clock me-1"></i> 4 min read</div>
+                <a href="#" class="btn btn-sm btn-outline-light">Read</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <img src="https://picsum.photos/seed/seed3/800/500" class="card-img-top" alt="Undersea cable maps get their biggest update yet">
+            <div class="card-body d-flex flex-column">
+              <span class="category">World</span>
+              <h5 class="card-title mt-2">Undersea cable maps get their biggest update yet</h5>
+              <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere.</p>
+              <div class="mt-auto d-flex align-items-center justify-content-between">
+                <div class="byline"><i class="bi bi-clock me-1"></i> 4 min read</div>
+                <a href="#" class="btn btn-sm btn-outline-light">Read</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <img src="https://picsum.photos/seed/seed4/800/500" class="card-img-top" alt="Indie films surge on streaming after festival wins">
+            <div class="card-body d-flex flex-column">
+              <span class="category">Entertainment</span>
+              <h5 class="card-title mt-2">Indie films surge on streaming after festival wins</h5>
+              <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere.</p>
+              <div class="mt-auto d-flex align-items-center justify-content-between">
+                <div class="byline"><i class="bi bi-clock me-1"></i> 4 min read</div>
+                <a href="#" class="btn btn-sm btn-outline-light">Read</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <img src="https://picsum.photos/seed/seed5/800/500" class="card-img-top" alt="Cloud vendors pivot to usage-based savings plans">
+            <div class="card-body d-flex flex-column">
+              <span class="category">Business</span>
+              <h5 class="card-title mt-2">Cloud vendors pivot to usage-based savings plans</h5>
+              <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere.</p>
+              <div class="mt-auto d-flex align-items-center justify-content-between">
+                <div class="byline"><i class="bi bi-clock me-1"></i> 4 min read</div>
+                <a href="#" class="btn btn-sm btn-outline-light">Read</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <img src="https://picsum.photos/seed/seed6/800/500" class="card-img-top" alt="New battery chemistry promises 2x cycle life">
+            <div class="card-body d-flex flex-column">
+              <span class="category">Science</span>
+              <h5 class="card-title mt-2">New battery chemistry promises 2x cycle life</h5>
+              <p class="card-text text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere.</p>
+              <div class="mt-auto d-flex align-items-center justify-content-between">
+                <div class="byline"><i class="bi bi-clock me-1"></i> 4 min read</div>
+                <a href="#" class="btn btn-sm btn-outline-light">Read</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES (Section 3) -->
+  <section id="categories" class="py-5 border-top border-primary-subtle">
+    <div class="container">
+      <h2 class="section-title mb-3">Browse by Category</h2>
+      <div class="row g-3">
+        <div class="col-6 col-md-3"><a class="btn w-100 py-3 category-chip" href="#"><i class="bi bi-cpu me-2"></i>Technology</a></div>
+        <div class="col-6 col-md-3"><a class="btn w-100 py-3 category-chip" href="#"><i class="bi bi-graph-up-arrow me-2"></i>Markets</a></div>
+        <div class="col-6 col-md-3"><a class="btn w-100 py-3 category-chip" href="#"><i class="bi bi-camera-reels me-2"></i>Entertainment</a></div>
+        <div class="col-6 col-md-3"><a class="btn w-100 py-3 category-chip" href="#"><i class="bi bi-globe-americas me-2"></i>World</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED STORY (Section 4) -->
+  <section id="featured" class="py-5">
+    <div class="container">
+      <div class="featured p-4 p-md-5 rounded-4">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-6">
+            <img src="https://picsum.photos/seed/feature/1200/800" class="img-fluid rounded-3 border border-1 border-primary-subtle" alt="Featured">
+          </div>
+          <div class="col-lg-6">
+            <span class="eyebrow">Deep Dive</span>
+            <h3 class="mt-2 fw-bold">Inside the Race to Build the World’s Cleanest Data Centers</h3>
+            <p class="text-secondary">From liquid cooling to scheduling workloads around renewables, operators are reinventing everything to cut emissions while boosting uptime.</p>
+            <ul class="text-secondary">
+              <li>Heat reuse warms nearby neighborhoods</li>
+              <li>AI predicts power draw down to the millisecond</li>
+              <li>On-site batteries smooth grid spikes</li>
+            </ul>
+            <div class="d-flex gap-2 mt-2">
+              <a class="btn btn-gradient" href="#"><i class="bi bi-journal-text me-2"></i>Read the analysis</a>
+              <a class="btn btn-outline-light" href="#"><i class="bi bi-share me-2"></i>Share</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER (Section 5) -->
+  <section id="newsletter" class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="newsletter rounded-4 p-4 p-md-5">
+            <div class="row align-items-center gy-3">
+              <div class="col-md-7">
+                <h3 class="mb-1">Stay ahead with our weekly briefing</h3>
+                <p class="mb-0 text-secondary">No spam. Just crisp insights every Monday morning.</p>
+              </div>
+              <div class="col-md-5">
+                <form class="d-flex gap-2">
+                  <input type="email" class="form-control form-control-lg" placeholder="Enter your email">
+                  <button class="btn btn-gradient btn-lg w-25" type="button">Join</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / FOOTER -->
+  <footer id="about" class="footer border-top border-primary-subtle py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5 class="fw-bold">PulsePress</h5>
+          <p class="text-secondary">Independent news daily. Built with Bootstrap 5. Curated by humans—enhanced with AI.</p>
+          <div class="d-flex gap-3 fs-4">
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h6 class="text-uppercase text-secondary">Sections</h6>
+          <ul class="list-unstyled">
+            <li><a href="#latest">Latest</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#featured">Featured</a></li>
+            <li><a href="#newsletter">Newsletter</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="text-uppercase text-secondary">Contact</h6>
+          <p class="text-secondary mb-1">news@pulsepress.example</p>
+          <p class="text-secondary">123 Media Ave, Web City</p>
+        </div>
+      </div>
+      <div class="mt-4 small text-secondary">© <span id="y"></span> PulsePress. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
